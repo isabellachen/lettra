@@ -49,3 +49,54 @@
   font-style: italic;
   border-bottom: 1px solid #dcdcdc;
 }
+
+.main-navigation {
+  ul,
+  ol {
+    margin: 0;
+    padding-left: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+}
+
+.main-navigation {
+  height: 30vh;
+  transition: all 200ms ease-in;
+  &__wrapper {
+    font-size: 1.2rem;
+    line-height: 1.75rem;
+    height: 100%;
+    @media (min-width: $breakpoint-desktop) {
+      display: flex;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+  }
+
+  &__left {
+    padding-right: $spacer * 1.5;
+    height: 100%;
+    overflow: hidden;
+    &:hover {
+      overflow-y: auto;
+    }
+  }
+
+  &__right {
+    display: none;
+    @media (min-width: $breakpoint-desktop) {
+      display: block;
+      overflow: hidden;
+      &:hover {
+        overflow-y: auto;
+      }
+    }
+  }
+
+  &.hide {
+    height: 0;
+  }
+}
