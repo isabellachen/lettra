@@ -629,58 +629,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
-}
-
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 100%;
-  left: -999em;
-  z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-
-.main-navigation ul ul a {
-  width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
-}
-
-.main-navigation li {
-  float: left;
-  position: relative;
-}
-
-.main-navigation a {
-  display: block;
-  text-decoration: none;
-}
-
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -887,6 +835,63 @@ a:hover, a:active {
   font-weight: 100;
   font-style: italic;
   border-bottom: 1px solid #dcdcdc;
+}
+
+.main-navigation ul,
+.main-navigation ol {
+  margin: 0;
+  padding-left: 0;
+}
+
+.main-navigation li {
+  list-style: none;
+}
+
+.main-navigation {
+  height: 30vh;
+  transition: all 200ms ease-in;
+}
+
+.main-navigation__wrapper {
+  font-size: 1.2rem;
+  line-height: 1.75rem;
+  height: 100%;
+}
+
+@media (min-width: 980px) {
+  .main-navigation__wrapper {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+}
+
+.main-navigation__left {
+  padding-right: 1.5rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-navigation__left:hover {
+  overflow-y: auto;
+}
+
+.main-navigation__right {
+  display: none;
+}
+
+@media (min-width: 980px) {
+  .main-navigation__right {
+    display: block;
+    overflow: hidden;
+  }
+  .main-navigation__right:hover {
+    overflow-y: auto;
+  }
+}
+
+.main-navigation.hide {
+  height: 0;
 }
 
 /*--------------------------------------------------------------
