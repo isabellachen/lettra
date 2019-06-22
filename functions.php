@@ -125,6 +125,7 @@ add_action('widgets_init', 'lettra_widgets_init');
  */
 function lettra_scripts()
 {
+  wp_enqueue_style('normalize_css', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
   wp_enqueue_style('lettra-style', get_stylesheet_uri());
 
   wp_enqueue_script('lettra-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
