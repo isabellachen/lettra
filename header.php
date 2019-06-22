@@ -49,19 +49,25 @@
         </div><!-- .site-branding -->
 
         <nav id="site-navigation" class="main-navigation">
-          <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'lettra'); ?></button>
-          <?php
-          wp_nav_menu(array(
-            'theme_location' => 'menu-1',
-            'menu_id'        => 'primary-menu',
-          ));
-          ?>
-          <?php
-          wp_nav_menu(array(
-            'theme_location' => 'menu-2',
-            'menu_id'        => 'secondary-menu',
-          ));
-          ?>
+          <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><//?php esc_html_e('Primary Menu', 'lettra'); ?></button> -->
+          <div class="main-navigation__wrapper">
+            <?php
+            wp_nav_menu(array(
+              'container' => false,
+              'theme_location' => 'menu-2',
+              'menu_id'        => 'secondary-menu',
+              'menu_class' => 'main-navigation__left'
+            ));
+            ?>
+            <?php
+            wp_nav_menu(array(
+              'container' => false,
+              'theme_location' => 'menu-1',
+              'menu_id'        => 'primary-menu',
+              'menu_class' => 'main-navigation__right'
+            ));
+            ?>
+          </div><!-- #site-navigation__wrapper -->
         </nav><!-- #site-navigation -->
       </div><!-- #site-header__wrapper -->
     </header><!-- #masthead -->
