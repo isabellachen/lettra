@@ -832,10 +832,61 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+.site-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  box-shadow: 0 4px 2px -2px #dcdcdc;
+  transition: all 200ms ease-in;
+}
+
+.site-header.hide {
+  box-shadow: 0 4px 2px -2px #fff;
+}
+
+.site-header__wrapper {
+  width: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+@media (min-width: 980px) {
+  .site-header__wrapper {
+    width: 980px;
+  }
+}
+
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.site-branding__title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 3.2rem;
+  font-family: "Roboto Slab", serif;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+
 .site-title {
   font-family: "Roboto Slab", serif;
   font-weight: 300;
   font-size: 3.2rem;
+  margin: 0;
+}
+
+.site-description {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 100;
+  font-style: italic;
+  border-bottom: 1px solid #dcdcdc;
 }
 
 /*--------------------------------------------------------------

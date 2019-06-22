@@ -1,5 +1,51 @@
+.site-header {
+  display: flex;
+  justify-content: center;
+  margin-top: $spacer;
+  box-shadow: 0 4px 2px -2px #dcdcdc;
+  transition: all 200ms ease-in;
+  &.hide {
+    box-shadow: 0 4px 2px -2px $color__background-light;
+  }
+
+  &__wrapper {
+    width: 100%;
+    margin-left: $spacer * 1.5;
+    margin-right: $spacer * 1.5;
+    @media (min-width: $breakpoint-desktop) {
+      width: $breakpoint-desktop;
+    }
+  }
+}
+
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: $font__size-xl;
+    font-family: $font__title;
+    padding-bottom: $spacer * 0.75;
+    border-bottom: 1px solid #dcdcdc;
+  }
+}
+
 .site-title {
   font-family: $font__title;
   font-weight: 300;
   font-size: $font__size-xl;
+  margin: 0;
+}
+
+.site-description {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: $font__size-s;
+  font-family: $font__title;
+  font-weight: 100;
+  font-style: italic;
+  border-bottom: 1px solid #dcdcdc;
 }
