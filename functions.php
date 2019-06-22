@@ -138,6 +138,19 @@ function lettra_scripts()
 }
 add_action('wp_enqueue_scripts', 'lettra_scripts');
 
+add_action('wp_head', 'lettra_customized_css');
+
+function lettra_customized_css()
+{
+  ?>
+  <style type='text/css'>
+    .site-title {
+      font-family: <?php echo get_theme_mod('title_font') ?>;
+    }
+  </style>
+<?php
+}
+
 /**
  * Implement the Custom Header feature.
  */
