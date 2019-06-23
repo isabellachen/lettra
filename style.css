@@ -777,6 +777,16 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
+.site {
+  /*
+    * this class is used in header.php in a div 
+    * that wraps the header, content and footer
+  */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .site-header {
   display: flex;
   justify-content: center;
@@ -1103,10 +1113,32 @@ a:hover, a:active {
   }
 }
 
+/*
+  * Styles for the main content area of all pages
+*/
+pre {
+  display: none;
+}
+
+.site-content {
+  /*
+    * this class is used in header.php in a div 
+    * that is before the main content
+  */
+  flex: 1;
+}
+
 @media (max-width: 768px) {
   .site-content.raise {
     margin-bottom: 3rem;
   }
+}
+
+.content-area {
+  /*
+    * this class is the only child of site-content 
+    * and wraps all the articles in a <main> element
+  */
 }
 
 /*--------------------------------------------------------------

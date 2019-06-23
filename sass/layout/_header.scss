@@ -1,3 +1,13 @@
+.site {
+  /*
+    * this class is used in header.php in a div 
+    * that wraps the header, content and footer
+  */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .site-header {
   display: flex;
   justify-content: center;
