@@ -117,6 +117,33 @@ function lettra_widgets_init()
     'before_title'  => '<h2 class="widget-title">',
     'after_title'   => '</h2>',
   ));
+  register_sidebar(array(
+    'name'          => esc_html__('Footer Col 1', 'lettra'),
+    'id'            => 'footer-col-1',
+    'description'   => esc_html__('Add widgets here.', 'lettra'),
+    'before_widget' => '<section id="%1$s" class="site-footer__col-1 widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 id="footer-title" class="site-footer__title"><span>',
+    'after_title'   => '</span><span id="footer-button" class="site-footer__close">x.</span></h2>',
+  ));
+  register_sidebar(array(
+    'name'          => esc_html__('Footer Col 2', 'lettra'),
+    'id'            => 'footer-col-2',
+    'description'   => esc_html__('Add widgets here.', 'lettra'),
+    'before_widget' => '<section id="%1$s" class="site-footer__col-2 widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="site-footer__title">',
+    'after_title'   => '</h2>',
+  ));
+  register_sidebar(array(
+    'name'          => esc_html__('Footer Col 3', 'lettra'),
+    'id'            => 'footer-col-3',
+    'description'   => esc_html__('Add widgets here.', 'lettra'),
+    'before_widget' => '<section id="%1$s" class="site-footer__col-3 widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="site-footer__title">',
+    'after_title'   => '</h2>',
+  ));
 }
 add_action('widgets_init', 'lettra_widgets_init');
 
@@ -128,7 +155,7 @@ function lettra_scripts()
   wp_enqueue_style('normalize_css', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
   wp_enqueue_style('lettra-style', get_stylesheet_uri());
 
-  wp_enqueue_script('lettra-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
+  wp_enqueue_script('lettra-navigation', get_template_directory_uri() . '/js/navigation.js', array(jquery), '20151215', true);
 
   wp_enqueue_script('lettra-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 

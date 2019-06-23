@@ -38,6 +38,9 @@
   font-weight: 300;
   font-size: $font__size-xl;
   margin: 0;
+  &__nav {
+    cursor: pointer;
+  }
 }
 
 .site-description {
