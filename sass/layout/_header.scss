@@ -72,7 +72,7 @@
     font-size: 1.2rem;
     line-height: 1.75rem;
     height: 100%;
-    @media (min-width: $breakpoint-desktop) {
+    @media (min-width: $breakpoint-tablet) {
       display: flex;
       justify-content: space-between;
       overflow: hidden;
@@ -104,7 +104,7 @@
 
   &__right {
     display: none;
-    @media (min-width: $breakpoint-desktop) {
+    @media (min-width: $breakpoint-tablet) {
       min-width: 10rem;
       display: block;
       overflow: hidden;

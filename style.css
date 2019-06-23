@@ -639,9 +639,6 @@ a:hover, a:active {
   .menu-toggle {
     display: none;
   }
-  .main-navigation ul {
-    display: block;
-  }
 }
 
 .site-main .comment-navigation, .site-main
@@ -862,7 +859,7 @@ a:hover, a:active {
   height: 100%;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 768px) {
   .main-navigation__wrapper {
     display: flex;
     justify-content: space-between;
@@ -899,7 +896,7 @@ a:hover, a:active {
   display: none;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 768px) {
   .main-navigation__right {
     min-width: 10rem;
     display: block;
