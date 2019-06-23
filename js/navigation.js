@@ -15,7 +15,7 @@
   $('#footer-close-button').on('click', () => {
     $('#colophon').toggleClass('hide');
     $('#footer-title').toggleClass('hide');
-    // $("#content").toggleClass("raise");
+    $('#content').toggleClass('raise');
   });
 
   var container, button, menu, links, i, len;
