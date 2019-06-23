@@ -766,7 +766,7 @@ a:hover, a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0 0 0.5rem;
   /* Make sure select elements fit in widgets. */
 }
 
@@ -942,12 +942,8 @@ a:hover, a:active {
 
 @media (min-width: 768px) {
   .site-footer__col-1 h2 {
-    display: block;
+    display: inline-block;
   }
-}
-
-.site-footer__title--underline {
-  border-bottom: 1px solid #cdcdcd;
 }
 
 .site-footer {
@@ -977,7 +973,7 @@ a:hover, a:active {
 
 @media (max-width: 768px) {
   .site-footer.hide {
-    height: 3rem;
+    height: 3.5rem;
   }
 }
 
@@ -988,6 +984,7 @@ a:hover, a:active {
 }
 
 .site-footer__wrapper {
+  position: relative;
   width: 100%;
   padding: 0 1.5rem 1rem;
   background-color: #f2f2f2;
@@ -1014,6 +1011,15 @@ a:hover, a:active {
   }
 }
 
+.site-footer__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-family: "Roboto Slab", serif, serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
 @media (min-width: 768px) {
   .site-footer__close {
     display: none;
@@ -1029,9 +1035,11 @@ a:hover, a:active {
   font-family: "Roboto Slab", serif;
   font-size: 1.2rem;
   font-weight: 400;
+  margin-top: 0;
   margin-bottom: 0.5rem;
   padding-bottom: 0.15rem;
   display: inline-block;
+  border-bottom: 1px solid #dcdcdc;
 }
 
 @media (max-width: 768px) {

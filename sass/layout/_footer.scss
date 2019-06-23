@@ -32,12 +32,8 @@
   display: flex;
   justify-content: space-between;
   @media (min-width: $breakpoint-tablet) {
-    display: block;
+    display: inline-block;
   }
-}
-
-.site-footer__title--underline {
-  border-bottom: 1px solid #cdcdcd;
 }
 
 .site-footer {
@@ -64,7 +60,7 @@
 
   &.hide {
     @media (max-width: $breakpoint-tablet) {
-      height: 3rem;
+      height: 3.5rem;
     }
   }
 
@@ -73,6 +69,7 @@
   }
 
   &__wrapper {
+    position: relative;
     width: 100%;
     padding: 0 $spacer * 1.5 $spacer;
     background-color: #f2f2f2;
@@ -91,6 +88,12 @@
   }
 
   &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-family: $font__title, serif;
+    font-size: $spacer * 1.2;
+    font-weight: 400;
     @media (min-width: $breakpoint-tablet) {
       display: none;
     }
@@ -105,9 +108,11 @@
     font-family: $font__title;
     font-size: $font__size-s;
     font-weight: 400;
+    margin-top: 0;
     margin-bottom: $spacer * 0.5;
     padding-bottom: $spacer * 0.15;
     display: inline-block;
+    border-bottom: 1px solid #dcdcdc;
     &.hide {
       @media (max-width: $breakpoint-tablet) {
         border-bottom: 1px solid #f2f2f2;

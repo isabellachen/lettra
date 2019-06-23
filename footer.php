@@ -15,6 +15,7 @@
 
 <footer id="colophon" class="site-footer">
   <div class="site-footer__wrapper">
+    <div id="footer-close-button" class="site-footer__close">x.</div>
     <div class="site-footer__widgets">
       <div class="site-footer__col-1">
         <?php if (is_active_sidebar('footer-col-1')) {
@@ -33,7 +34,7 @@
       </div>
     </div>
     <!--.site-footer__widgets-->
-    <div class="footer__credit">
+    <div class="site-footer__credit">
       <a href="<?php echo esc_url(__('https://wordpress.org/', 'lettra')); ?>">
         <?php
         /* translators: %s: CMS name, i.e. WordPress. */

@@ -12,6 +12,12 @@
     $('#masthead').toggleClass('hide');
   });
 
+  $('#footer-close-button').on('click', () => {
+    $('#colophon').toggleClass('hide');
+    $('#footer-title').toggleClass('hide');
+    // $("#content").toggleClass("raise");
+  });
+
   var container, button, menu, links, i, len;
 
   container = document.getElementById('site-navigation');
