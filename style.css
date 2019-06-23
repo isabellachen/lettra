@@ -999,6 +999,14 @@ a:hover, a:active {
   }
 }
 
+.site-footer__credit__sep {
+  padding: 0 1rem;
+}
+
+.site-footer__credit__author {
+  padding-left: 0.2rem;
+}
+
 @media (max-width: 768px) {
   .site-footer.hide {
     height: 3.5rem;

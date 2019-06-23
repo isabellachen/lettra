@@ -35,16 +35,16 @@
     </div>
     <!--.site-footer__widgets-->
     <div class="site-footer__credit">
-      <a href="<?php echo esc_url(__('https://wordpress.org/', 'lettra')); ?>">
+      <a class="site-footer__credit__wp" href="<?php echo esc_url(__('https://wordpress.org/', 'lettra')); ?>">
         <?php
         /* translators: %s: CMS name, i.e. WordPress. */
         printf(esc_html__('Proudly powered by %s', 'lettra'), 'WordPress');
         ?>
       </a>
-      <span class="sep"> | </span>
+      <span class="site-footer__credit__sep"> | </span>
       <?php
       /* translators: 1: Theme name, 2: Theme author. */
-      printf(esc_html__('Theme: %1$s by %2$s.', 'lettra'), 'lettra', '<a href="http://underscores.me/">Underscores.me</a>');
+      printf(esc_html__('Theme: %1$s by %2$s.', 'lettra'), 'Lettra', '<a class="site-footer__credit__author" href="http://underscores.me/"> Isabella Chen</a>');
       ?>
     </div><!-- .footer__credit -->
   </div><!-- .site-footer__wrapper -->
