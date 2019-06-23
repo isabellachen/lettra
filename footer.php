@@ -16,15 +16,21 @@
 <footer id="colophon" class="site-footer">
   <div class="site-footer__wrapper">
     <div class="site-footer__widgets">
-      <?php if (is_active_sidebar('footer-col-1')) {
-        dynamic_sidebar('footer-col-1');
-      } ?>
-      <?php if (is_active_sidebar('footer-col-2')) {
-        dynamic_sidebar('footer-col-2');
-      } ?>
-      <?php if (is_active_sidebar('footer-col-3')) {
-        dynamic_sidebar('footer-col-3');
-      } ?>
+      <div class="site-footer__col-1">
+        <?php if (is_active_sidebar('footer-col-1')) {
+          dynamic_sidebar('footer-col-1');
+        } ?>
+      </div>
+      <div class="site-footer__col-2">
+        <?php if (is_active_sidebar('footer-col-2')) {
+          dynamic_sidebar('footer-col-2');
+        } ?>
+      </div>
+      <div class="site-footer__col-3">
+        <?php if (is_active_sidebar('footer-col-3')) {
+          dynamic_sidebar('footer-col-3');
+        } ?>
+      </div>
     </div>
     <!--.site-footer__widgets-->
     <div class="footer__credit">
