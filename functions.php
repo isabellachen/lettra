@@ -123,7 +123,7 @@ function lettra_widgets_init()
     'description'   => esc_html__('Add widgets here.', 'lettra'),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h2 id="footer-title" class="site-footer__title"><span>',
+    'before_title'  => '<h2 id="footer-title" class="site-footer__title"><span class="site-footer__title--underline">',
     'after_title'   => '</span><span id="footer-button" class="site-footer__close">x.</span></h2>',
   ));
   register_sidebar(array(
@@ -132,7 +132,7 @@ function lettra_widgets_init()
     'description'   => esc_html__('Add widgets here.', 'lettra'),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h2 class="site-footer__title">',
+    'before_title'  => '<h2 class="site-footer__title site-footer__title--underline">',
     'after_title'   => '</h2>',
   ));
   register_sidebar(array(
@@ -141,7 +141,7 @@ function lettra_widgets_init()
     'description'   => esc_html__('Add widgets here.', 'lettra'),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h2 class="site-footer__title">',
+    'before_title'  => '<h2 class="site-footer__title site-footer__title--underline">',
     'after_title'   => '</h2>',
   ));
 }
