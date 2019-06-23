@@ -1,5 +1,7 @@
 .site-content {
   &.raise {
-    margin-bottom: 3rem;
+    @media (max-width: $breakpoint-tablet) {
+      margin-bottom: 3rem;
+    }
   }
 }
