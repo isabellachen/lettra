@@ -85,9 +85,6 @@
       display: flex;
       flex-direction: column;
     }
-    @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
-      width: $breakpoint-tablet;
-    }
     @media (min-width: $breakpoint-desktop) {
       width: $breakpoint-desktop;
     }

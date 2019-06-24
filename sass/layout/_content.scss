@@ -19,11 +19,9 @@
 }
 
 .site-main {
+  width: 100%;
   margin: 0 $spacer * 1.5 $spacer * 1.5;
   @media (min-width: $breakpoint-desktop) {
     width: $breakpoint-desktop;
-  }
-  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
-    width: $breakpoint-tablet;
   }
 }

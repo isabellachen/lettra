@@ -1051,12 +1051,6 @@ a:hover, a:active {
   }
 }
 
-@media (min-width: 768px) and (max-width: 980px) {
-  .site-footer__wrapper {
-    width: 768px;
-  }
-}
-
 @media (min-width: 980px) {
   .site-footer__wrapper {
     width: 980px;
@@ -1142,18 +1136,13 @@ a:hover, a:active {
 }
 
 .site-main {
+  width: 100%;
   margin: 0 1.5rem 1.5rem;
 }
 
 @media (min-width: 980px) {
   .site-main {
     width: 980px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 980px) {
-  .site-main {
-    width: 768px;
   }
 }
 
