@@ -400,7 +400,10 @@ p {
   margin-bottom: 1.5em;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic;
 }
 
@@ -422,20 +425,26 @@ pre {
   max-width: 100%;
   overflow: auto;
   padding: 1.6em;
+  white-space: pre-wrap;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
   font-size: 0.9375rem;
 }
 
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none;
 }
@@ -1116,10 +1125,6 @@ a:hover, a:active {
 /*
   * Styles for the main content area of all pages
 */
-pre {
-  display: none;
-}
-
 .site-content {
   /*
     * this class is used in header.php in a div 
