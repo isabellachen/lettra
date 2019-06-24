@@ -26,7 +26,7 @@
   <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'lettra'); ?></a>
 
-    <header id="masthead" class="site-header">
+    <header id="masthead" class="site-header hide">
       <div class="site-header__wrapper">
         <div class="site-branding">
           <div class="site-branding__title">
@@ -48,7 +48,7 @@
           <?php endif; ?>
         </div><!-- .site-branding -->
 
-        <nav id="site-navigation" class="main-navigation">
+        <nav id="site-navigation" class="main-navigation hide">
           <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><//?php esc_html_e('Primary Menu', 'lettra'); ?></button> -->
           <div class="main-navigation__wrapper">
             <?php
