@@ -166,7 +166,6 @@ function lettra_scripts()
 }
 add_action('wp_enqueue_scripts', 'lettra_scripts');
 
-add_action('wp_head', 'lettra_customized_css');
 
 function lettra_customized_css()
 {
@@ -178,6 +177,27 @@ function lettra_customized_css()
   </style>
 <?php
 }
+add_action('wp_head', 'lettra_customized_css');
+
+function lettra_excerpt_more($more)
+{
+  if (!is_single()) {
+    $more = sprintf(
+      '<a class="read-more" href="%1$s">%2$s</a>',
+      get_permalink(get_the_ID()),
+      __('[Read More...]', 'textdomain')
+    );
+  }
+
+  return $more;
+}
+add_filter('excerpt_more', 'lettra_excerpt_more');
+
+function wpt_excerpt_length($length)
+{
+  return 160;
+}
+add_filter('excerpt_length', 'wpt_excerpt_length', 999);
 
 /**
  * Implement the Custom Header feature.

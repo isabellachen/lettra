@@ -25,3 +25,65 @@
     width: $breakpoint-desktop;
   }
 }
+
+.site-post {
+  margin-top: $spacer;
+}
+
+.entry {
+  &-title {
+    font-family: $font__title;
+    font-weight: 300;
+    font-size: $font__size-l;
+  }
+
+  &-meta {
+    font-size: $font__size-s;
+    margin: 0.5rem 0;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+  }
+
+  &-content {
+    p {
+      margin-left: 0;
+      margin-top: 0;
+      margin-bottom: $spacer;
+    }
+  }
+
+  &-thumbnail {
+    float: left;
+    margin: 0 0.5rem 0 0;
+    img {
+      height: 10rem;
+      width: 10rem;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  &-footer {
+    clear: both;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+
+    .cat-links {
+      display: block;
+    }
+    .tags-links {
+      display: block;
+    }
+    .edit-link {
+      display: block;
+    }
+  }
+}
+
+.byline {
+  padding-right: 0.5rem;
+}
+
+.posted-on {
+  padding-left: 0.5rem;
+}

@@ -1146,6 +1146,75 @@ a:hover, a:active {
   }
 }
 
+.site-post {
+  margin-top: 1rem;
+}
+
+.entry-title {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  font-size: 2.2rem;
+}
+
+.entry-meta {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.entry-content p {
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.entry-thumbnail {
+  float: left;
+  margin: 0 0.5rem 0 0;
+}
+
+.entry-thumbnail img {
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.entry-footer {
+  clear: both;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.entry-footer .cat-links {
+  display: block;
+}
+
+.entry-footer .tags-links {
+  display: block;
+}
+
+.entry-footer .edit-link {
+  display: block;
+}
+
+.byline {
+  padding-right: 0.5rem;
+}
+
+.posted-on {
+  padding-left: 0.5rem;
+}
+
+/*
+  * Styles specific to the content-excerpt
+  * The main styling for content blocks is in _content
+*/
+.read-more {
+  margin-left: 0.5rem;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
