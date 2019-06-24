@@ -1,17 +1,14 @@
 /*
   * Styles for the main content area of all pages
 */
-pre {
-  // display: none;
-}
 
 .site-content {
   /*
     * this class is used in header.php in a div 
     * that is before the main content
   */
-  // display: flex;
-  // justify-content: center;
+  display: flex;
+  justify-content: center;
   flex: 1;
 
   &.raise {
@@ -21,16 +18,12 @@ pre {
   }
 }
 
-.content-area {
-  /*
-    * this class is the only child of site-content 
-    * and wraps all the articles in a <main> element
-  */
-  // margin: 0 $spacer * 1.5 $spacer * 1.5;
-  // @media (min-width: $breakpoint-desktop) {
-  //   width: $breakpoint-desktop;
-  // }
-  // @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
-  //   width: $breakpoint-tablet;
-  // }
+.site-main {
+  margin: 0 $spacer * 1.5 $spacer * 1.5;
+  @media (min-width: $breakpoint-desktop) {
+    width: $breakpoint-desktop;
+  }
+  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    width: $breakpoint-tablet;
+  }
 }

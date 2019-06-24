@@ -1130,6 +1130,8 @@ a:hover, a:active {
     * this class is used in header.php in a div 
     * that is before the main content
   */
+  display: flex;
+  justify-content: center;
   flex: 1;
 }
 
@@ -1139,11 +1141,20 @@ a:hover, a:active {
   }
 }
 
-.content-area {
-  /*
-    * this class is the only child of site-content 
-    * and wraps all the articles in a <main> element
-  */
+.site-main {
+  margin: 0 1.5rem 1.5rem;
+}
+
+@media (min-width: 980px) {
+  .site-main {
+    width: 980px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .site-main {
+    width: 768px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1151,11 +1162,6 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .sticky {
   display: block;
-}
-
-.post,
-.page {
-  margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
