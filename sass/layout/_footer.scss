@@ -97,6 +97,7 @@
     font-family: $font__title, serif;
     font-size: $spacer * 1.2;
     font-weight: 400;
+    cursor: pointer;
     @media (min-width: $breakpoint-tablet) {
       display: none;
     }

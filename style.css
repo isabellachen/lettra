@@ -657,6 +657,13 @@ a:hover, a:active {
   overflow: hidden;
 }
 
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -1064,6 +1071,7 @@ a:hover, a:active {
   font-family: "Roboto Slab", serif, serif;
   font-size: 1.2rem;
   font-weight: 400;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {

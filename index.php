@@ -16,7 +16,6 @@ get_header();
 ?>
 
 <main id="main" class="site-main">
-  <!-- <span style="font-size:8px; display:inline-block">index.php</span> -->
   <?php
   if (have_posts()) :
 

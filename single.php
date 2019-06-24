@@ -12,7 +12,6 @@ get_header();
 
 
 <main id="main" class="site-main">
-  <span style="font-size:8px; display:inline-block">single.php</span>
   <?php
   while (have_posts()) :
     the_post();
