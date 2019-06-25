@@ -836,6 +836,7 @@ a:hover, a:active {
 .site-branding__title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   font-size: 3.2rem;
   font-family: "Roboto Slab", serif;
@@ -852,6 +853,8 @@ a:hover, a:active {
 
 .site-title__nav {
   cursor: pointer;
+  display: inline-block;
+  margin-top: 1rem 0.25;
 }
 
 .site-description {
@@ -947,6 +950,32 @@ a:hover, a:active {
 
 .main-navigation.hide {
   height: 0;
+}
+
+/*
+ * Hamburger button
+*/
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #cdcdcd;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 
 .site-footer ul {
