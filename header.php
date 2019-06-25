@@ -38,7 +38,11 @@
               <p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
             <?php endif; ?>
             <!-- the open button menu -->
-            <div id="nav-button" class="site-title__nav">n</div>
+            <div id="nav-button" class="site-title__nav">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
           </div><!-- .site-branding__title -->
 
           <?php $lettra_description = get_bloginfo('description', 'display');

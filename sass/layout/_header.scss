@@ -35,6 +35,7 @@
   &__title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     font-size: $font__size-xl;
     font-family: $font__title;
@@ -50,6 +51,8 @@
   margin: 0;
   &__nav {
     cursor: pointer;
+    display: inline-block;
+    margin-top: $spacer .25;
   }
 }
 
@@ -140,5 +143,33 @@
 
   &.hide {
     height: 0;
+  }
+}
+
+/*
+ * Hamburger button
+*/
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #cdcdcd;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change {
+  & .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  & .bar2 {
+    opacity: 0;
+  }
+
+  & .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
   }
 }

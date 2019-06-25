@@ -7,7 +7,7 @@
 
 (function($) {
   $('#nav-button').on('click', () => {
-    console.log('clicked');
+    $('#nav-button').toggleClass('change');
     $('#site-navigation').toggleClass('hide');
     $('#masthead').toggleClass('hide');
   });
