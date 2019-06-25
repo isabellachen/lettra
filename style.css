@@ -1034,6 +1034,7 @@ a:hover, a:active {
   position: fixed;
   bottom: 0;
   width: 100%;
+  min-height: 3.5rem;
 }
 
 .site-footer__credit {
@@ -1077,6 +1078,7 @@ a:hover, a:active {
   padding: 0 1.5rem 1rem;
   background-color: #f2f2f2;
   box-sizing: border-box;
+  min-height: 3.5rem;
 }
 
 @media (min-width: 768px) {

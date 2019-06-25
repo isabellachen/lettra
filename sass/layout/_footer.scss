@@ -45,6 +45,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  min-height: 3.5rem;
 
   &__credit {
     display: none;
@@ -80,6 +81,7 @@
     padding: 0 $spacer * 1.5 $spacer;
     background-color: #f2f2f2;
     box-sizing: border-box;
+    min-height: 3.5rem;
     @media (min-width: $breakpoint-tablet) {
       margin: 0 $spacer;
       display: flex;
