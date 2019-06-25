@@ -117,6 +117,33 @@ function lettra_widgets_init()
     'before_title'  => '<h2 class="widget-title">',
     'after_title'   => '</h2>',
   ));
+  register_sidebar(array(
+    'name'          => esc_html__('Footer Col 1', 'lettra'),
+    'id'            => 'footer-col-1',
+    'description'   => esc_html__('Add widgets here.', 'lettra'),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 id="footer-title" class="site-footer__title">',
+    'after_title'   => '</h2>',
+  ));
+  register_sidebar(array(
+    'name'          => esc_html__('Footer Col 2', 'lettra'),
+    'id'            => 'footer-col-2',
+    'description'   => esc_html__('Add widgets here.', 'lettra'),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="site-footer__title">',
+    'after_title'   => '</h2>',
+  ));
+  register_sidebar(array(
+    'name'          => esc_html__('Footer Col 3', 'lettra'),
+    'id'            => 'footer-col-3',
+    'description'   => esc_html__('Add widgets here.', 'lettra'),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="site-footer__title">',
+    'after_title'   => '</h2>',
+  ));
 }
 add_action('widgets_init', 'lettra_widgets_init');
 
@@ -125,18 +152,52 @@ add_action('widgets_init', 'lettra_widgets_init');
  */
 function lettra_scripts()
 {
+  wp_enqueue_style('normalize_css', 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
   wp_enqueue_style('lettra-style', get_stylesheet_uri());
 
-  wp_enqueue_script('lettra-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
+  wp_enqueue_script('lettra-navigation', get_template_directory_uri() . '/js/navigation.js', array(jquery), '20151215', true);
 
   wp_enqueue_script('lettra-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
-  wp_enqueue_style('googlefont_css', 'https://fonts.googleapis.com/css?family=Lato:300,300i,400|Roboto+Slab:300,400,700&display=swap');
+  wp_enqueue_style('googlefont_css', 'https://fonts.googleapis.com/css?family=Lato:300,300i,400|Roboto+Slab:100,300,400,700&display=swap');
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
 }
 add_action('wp_enqueue_scripts', 'lettra_scripts');
+
+
+function lettra_customized_css()
+{
+  ?>
+  <style type='text/css'>
+    .site-title {
+      font-family: <?php echo get_theme_mod('title_font') ?>;
+    }
+  </style>
+<?php
+}
+add_action('wp_head', 'lettra_customized_css');
+
+function lettra_excerpt_more($more)
+{
+  if (!is_single()) {
+    $more = sprintf(
+      '<a class="read-more" href="%1$s">%2$s</a>',
+      get_permalink(get_the_ID()),
+      __('[Read More...]', 'textdomain')
+    );
+  }
+
+  return $more;
+}
+add_filter('excerpt_more', 'lettra_excerpt_more');
+
+function wpt_excerpt_length($length)
+{
+  return 160;
+}
+add_filter('excerpt_length', 'wpt_excerpt_length', 999);
 
 /**
  * Implement the Custom Header feature.

@@ -386,7 +386,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -400,7 +400,10 @@ p {
   margin-bottom: 1.5em;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic;
 }
 
@@ -422,20 +425,26 @@ pre {
   max-width: 100%;
   overflow: auto;
   padding: 1.6em;
+  white-space: pre-wrap;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
   font-size: 0.9375rem;
 }
 
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none;
 }
@@ -459,8 +468,10 @@ html {
 }
 
 body {
-  background: salmon;
+  background: #fff;
   /* Fallback for when there is no custom background color defined. */
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
 }
 
 hr {
@@ -605,6 +616,7 @@ textarea {
 --------------------------------------------------------------*/
 a {
   color: royalblue;
+  text-decoration: none;
 }
 
 a:visited {
@@ -626,58 +638,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
-}
-
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 100%;
-  left: -999em;
-  z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-
-.main-navigation ul ul a {
-  width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
-}
-
-.main-navigation li {
-  float: left;
-  position: relative;
-}
-
-.main-navigation a {
-  display: block;
-  text-decoration: none;
-}
-
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -688,9 +648,6 @@ a:hover, a:active {
   .menu-toggle {
     display: none;
   }
-  .main-navigation ul {
-    display: block;
-  }
 }
 
 .site-main .comment-navigation, .site-main
@@ -698,6 +655,13 @@ a:hover, a:active {
 .post-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+  margin-top: 1rem;
+  font-size: 1.25rem;
 }
 
 .comment-navigation .nav-previous,
@@ -815,7 +779,7 @@ a:hover, a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-  margin: 0 0 1.5em;
+  margin: 0 0 0.5rem;
   /* Make sure select elements fit in widgets. */
 }
 
@@ -827,15 +791,443 @@ a:hover, a:active {
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site {
+  /*
+    * this class is used in header.php in a div 
+    * that wraps the header, content and footer
+  */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  box-shadow: 0 4px 2px -2px #dcdcdc;
+  transition: all 200ms ease-in;
+}
+
+.site-header.hide {
+  box-shadow: 0 4px 2px -2px #fff;
+}
+
+.site-header__wrapper {
+  width: 100%;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+@media (min-width: 980px) {
+  .site-header__wrapper {
+    width: 980px;
+  }
+}
+
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.site-branding__title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 3.2rem;
+  font-family: "Roboto Slab", serif;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.site-title {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  font-size: 3.2rem;
+  margin: 0;
+}
+
+.site-title__nav {
+  cursor: pointer;
+}
+
+.site-description {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  font-family: "Roboto Slab", serif;
+  font-weight: 100;
+  font-style: italic;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.main-navigation ul,
+.main-navigation ol {
+  margin: 0;
+  padding-left: 0;
+}
+
+.main-navigation li {
+  list-style: none;
+}
+
+.main-navigation {
+  height: 30vh;
+  transition: all 200ms ease-in;
+}
+
+.main-navigation__wrapper {
+  font-size: 1.2rem;
+  line-height: 1.75rem;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .main-navigation__wrapper {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+}
+
+.main-navigation__left {
+  padding-right: 1.5rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-navigation__left:hover {
+  overflow-y: auto;
+}
+
+.main-navigation__left:hover::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  background-color: #f5f5f5;
+}
+
+.main-navigation__left:hover::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+.main-navigation__left:hover::-webkit-scrollbar-thumb {
+  background-color: #dcdcdc;
+  border: 2px solid #cdcdcd;
+}
+
+.main-navigation__right {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .main-navigation__right {
+    min-width: 10rem;
+    display: block;
+    overflow: hidden;
+  }
+  .main-navigation__right:hover {
+    overflow-y: auto;
+  }
+  .main-navigation__right:hover::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+    background-color: #f5f5f5;
+  }
+  .main-navigation__right:hover::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+  }
+  .main-navigation__right:hover::-webkit-scrollbar-thumb {
+    background-color: #dcdcdc;
+    border: 2px solid #cdcdcd;
+  }
+}
+
+.main-navigation.hide {
+  height: 0;
+}
+
+.site-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 
+  * If there is a list in the first widget
+  * make sure it wraps on small screens
+*/
+.site-footer__col-1 ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-footer__col-1 ul > li {
+  margin-right: 1rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 768px) {
+  .site-footer__col-1 ul > li {
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-footer__col-1 ul {
+    flex-direction: column;
+    margin-right: 0;
+  }
+}
+
+/* 
+  * target the title of col-1
+  * seperating the text and close button elements
+*/
+.site-footer__col-1 h2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .site-footer__col-1 h2 {
+    display: inline-block;
+  }
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.site-footer__credit {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .site-footer__credit {
+    display: flex;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    border-top: 1px solid #dcdcdc;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+
+.site-footer__credit__sep {
+  padding: 0 1rem;
+}
+
+.site-footer__credit__author {
+  padding-left: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .site-footer.hide {
+    height: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    position: static;
+  }
+}
+
+.site-footer__wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 1.5rem 1rem;
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .site-footer__wrapper {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 980px) {
+  .site-footer__wrapper {
+    width: 980px;
+  }
+}
+
+.site-footer__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-family: "Roboto Slab", serif, serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .site-footer__close {
+    display: none;
+  }
+}
+
+.site-footer__widgets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-footer__title {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.15rem;
+  display: inline-block;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+@media (max-width: 768px) {
+  .site-footer__title.hide {
+    border-bottom: 1px solid #f2f2f2;
+  }
+}
+
+.site-footer__col-1, .site-footer__col-2, .site-footer__col-3 {
+  padding-top: 1rem;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .site-footer__col-1, .site-footer__col-2, .site-footer__col-3 {
+    /*constrain width of column only on larger screens*/
+    max-width: 20.5rem;
+  }
+}
+
+.site-footer__col-2, .site-footer__col-3 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .site-footer__col-2, .site-footer__col-3 {
+    display: block;
+  }
+}
+
+/*
+  * Styles for the main content area of all pages
+*/
+.site-content {
+  /*
+    * this class is used in header.php in a div 
+    * that is before the main content
+  */
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .site-content.raise {
+    margin-bottom: 3rem;
+  }
+}
+
+.site-main {
+  width: 100%;
+  margin: 0 1.5rem 1.5rem;
+}
+
+@media (min-width: 980px) {
+  .site-main {
+    width: 980px;
+  }
+}
+
+.site-post {
+  margin-top: 1rem;
+}
+
+.entry-title {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  font-size: 2.2rem;
+}
+
+.entry-meta {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.entry-content p {
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.entry-thumbnail {
+  float: left;
+  margin: 0 0.5rem 0 0;
+}
+
+.entry-thumbnail img {
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.entry-footer {
+  clear: both;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.entry-footer .cat-links {
+  display: block;
+}
+
+.entry-footer .tags-links {
+  display: block;
+}
+
+.entry-footer .edit-link {
+  display: block;
+}
+
+.byline {
+  padding-right: 0.5rem;
+}
+
+.posted-on {
+  padding-left: 0.5rem;
+}
+
+/*
+  * Styles specific to the content-excerpt
+  * The main styling for content blocks is in _content
+*/
+.read-more {
+  margin-left: 0.5rem;
+}
+
+/*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
 .sticky {
   display: block;
-}
-
-.post,
-.page {
-  margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
