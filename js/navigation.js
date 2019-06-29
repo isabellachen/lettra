@@ -18,6 +18,16 @@
     $('#content').toggleClass('raise');
   });
 
+  // Hide footer on mobile screens if there are no widgets in column 1
+  (function() {
+    const footerColOneHasChildren =
+      $('#footer_col-1').children().length > 0 ? true : false;
+    const isLessThanBreakpointTablet = $(window).width() <= 768 ? true : false;
+    if (!footerColOneHasChildren && isLessThanBreakpointTablet) {
+      $('#colophon').addClass('no-display');
+    }
+  })();
+
   var container, button, menu, links, i, len;
 
   container = document.getElementById('site-navigation');

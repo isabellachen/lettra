@@ -1066,6 +1066,10 @@ a:hover, a:active {
   }
 }
 
+.site-footer.no-display {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .site-footer {
     position: static;

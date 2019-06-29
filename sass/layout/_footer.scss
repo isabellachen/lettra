@@ -71,6 +71,10 @@
     }
   }
 
+  &.no-display {
+    display: none;
+  }
+
   @media (min-width: $breakpoint-tablet) {
     position: static;
   }

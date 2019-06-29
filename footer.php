@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -17,7 +18,7 @@
   <div class="site-footer__wrapper">
     <div id="footer-close-button" class="site-footer__close">x.</div>
     <div class="site-footer__widgets">
-      <div class="site-footer__col-1">
+      <div id="footer_col-1" class="site-footer__col-1">
         <?php if (is_active_sidebar('footer-col-1')) {
           dynamic_sidebar('footer-col-1');
         } ?>
