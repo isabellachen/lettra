@@ -21,7 +21,15 @@
 
   wp.customize('title_font', function(value) {
     value.bind(function(to) {
-      $('h1, h2').css({
+      $('h1, h2, .site-title, .entry-title, .site-footer__title').css({
+        'font-family': to
+      });
+    });
+  });
+
+  wp.customize('body_font', function(value) {
+    value.bind(function(to) {
+      $('body').css({
         'font-family': to
       });
     });

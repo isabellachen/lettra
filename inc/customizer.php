@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Lettra Theme Customizer
  *
@@ -41,9 +42,27 @@ function lettra_customize_register($wp_customize)
     'settings'   => 'title_font',
     'type'       => 'select',
     'choices'    => array(
-      'Roboto Slab' => 'Roboto Slab',
-      'Times New Roman' => 'Times New Roman',
-      'American Typewriter' => 'American Typewriter',
+      'Roboto Slab, serif' => 'Roboto Slab',
+      'Didot, Garamond, "Times New Roman", serif' => 'Didot',
+      'American Typewriter, serif' => 'American Typewriter',
+    ),
+  ));
+
+  $wp_customize->add_setting('body_font', array(
+    'default'        => 'Lato',
+    'capability'     => 'edit_theme_options',
+    'transport'  => 'postMessage'
+  ));
+
+  $wp_customize->add_control('body_font_control', array(
+    'label'      => __('Body Font', 'lettra'),
+    'section'    => 'font_options',
+    'settings'   => 'body_font',
+    'type'       => 'select',
+    'choices'    => array(
+      'Lato, san-serif, Arial, sans-serif' => 'Lato',
+      'Avenir, Arial, sans-serif' => 'Avenir',
+      'Helvetica, Arial, sans-serif' => 'Helvetica',
     ),
   ));
 

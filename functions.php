@@ -172,8 +172,15 @@ function lettra_customized_css()
 {
   ?>
   <style type='text/css'>
+    body {
+      font-family: <?php echo get_theme_mod('body_font') ?>;
+    }
+
     h1,
-    h2 {
+    h2,
+    .site-title,
+    .entry-title,
+    .site-footer__title {
       font-family: <?php echo get_theme_mod('title_font') ?>;
     }
   </style>
