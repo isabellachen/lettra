@@ -17,8 +17,26 @@ function lettra_customize_register($wp_customize)
   $wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
   $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
 
+  $wp_customize->add_setting('link_color', array(
+    'default'        => 'orange',
+    'transport'  => 'postMessage'
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'link_color',
+      array(
+        'label'      => __('Link Color', 'lettra'),
+        'mode' => 'hue',
+        'section'    => 'colors',
+        'settings'   => 'link_color',
+      )
+    )
+  );
+
   /**
-   * Custom setting.
+   * Custom settings for fonts
    */
   $wp_customize->add_section(
     'font_options',

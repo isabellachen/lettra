@@ -176,6 +176,10 @@ function lettra_customized_css()
       font-family: <?php echo get_theme_mod('body_font') ?>;
     }
 
+    a {
+      color: hsl(<?php echo get_theme_mod('link_color') ?>, 60%, 60%);
+    }
+
     h1,
     h2,
     .site-title,

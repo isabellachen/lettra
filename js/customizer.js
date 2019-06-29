@@ -13,6 +13,7 @@
       $('.site-title a').text(to);
     });
   });
+
   wp.customize('blogdescription', function(value) {
     value.bind(function(to) {
       $('.site-description').text(to);
@@ -23,6 +24,15 @@
     value.bind(function(to) {
       $('h1, h2, .site-title, .entry-title, .site-footer__title').css({
         'font-family': to
+      });
+    });
+  });
+
+  wp.customize('link_color', function(value) {
+    value.bind(function(to) {
+      const hue = `hsl(${to}, 60%, 70%)`;
+      $('a').css({
+        color: hue
       });
     });
   });
