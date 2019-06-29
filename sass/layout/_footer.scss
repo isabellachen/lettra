@@ -1,0 +1,147 @@
+.site-footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 
+  * If there is a list in the first widget
+  * make sure it wraps on small screens
+*/
+.site-footer__col-1 ul {
+  display: flex;
+  flex-wrap: wrap;
+  & > li {
+    margin-right: $spacer;
+    line-height: 2rem;
+    @media (min-width: $breakpoint-tablet) {
+      line-height: 1.5rem;
+    }
+  }
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: column;
+    margin-right: 0;
+  }
+}
+
+/* 
+  * target the title of col-1
+  * seperating the text and close button elements
+*/
+.site-footer__col-1 h2 {
+  display: flex;
+  justify-content: space-between;
+  @media (min-width: $breakpoint-tablet) {
+    display: inline-block;
+  }
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 3.5rem;
+
+  &__credit {
+    display: none;
+    @media (min-width: $breakpoint-tablet) {
+      display: flex;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #dcdcdc;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+    &__sep {
+      padding: 0 $spacer;
+    }
+    &__author {
+      padding-left: $spacer * 0.2;
+    }
+  }
+
+  &.hide {
+    @media (max-width: $breakpoint-tablet) {
+      height: 3.5rem;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    position: static;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 $spacer * 1.5 $spacer;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+    min-height: 3.5rem;
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0 $spacer;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      width: $breakpoint-desktop;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-family: $font__title, serif;
+    font-size: $spacer * 1.2;
+    font-weight: 400;
+    cursor: pointer;
+    @media (min-width: $breakpoint-tablet) {
+      display: none;
+    }
+  }
+
+  &__widgets {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-family: $font__title;
+    font-size: $font__size-s;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: $spacer * 0.5;
+    padding-bottom: $spacer * 0.15;
+    display: inline-block;
+    border-bottom: 1px solid #dcdcdc;
+    &.hide {
+      @media (max-width: $breakpoint-tablet) {
+        border-bottom: 1px solid #f2f2f2;
+      }
+    }
+  }
+
+  &__col-1,
+  &__col-2,
+  &__col-3 {
+    padding-top: $spacer;
+    flex: 1;
+    @media (min-width: $breakpoint-tablet) {
+      /*constrain width of column only on larger screens*/
+      max-width: 20.5rem;
+    }
+  }
+
+  &__col-2,
+  &__col-3 {
+    display: none;
+    @media (min-width: $breakpoint-tablet) {
+      display: block;
+    }
+  }
+}
