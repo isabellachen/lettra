@@ -35,10 +35,6 @@
       let css = style.html();
       css = css.split(hue + ',').join(to + ',');
       style.html(css).data('hue', to);
-      // const hue = `hsl(${to}, 60%, 70%)`;
-      // $('a').css({
-      //   color: hue
-      // });
     });
   });
 
