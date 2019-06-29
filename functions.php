@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Lettra functions and definitions
  *
@@ -171,7 +172,8 @@ function lettra_customized_css()
 {
   ?>
   <style type='text/css'>
-    .site-title {
+    h1,
+    h2 {
       font-family: <?php echo get_theme_mod('title_font') ?>;
     }
   </style>

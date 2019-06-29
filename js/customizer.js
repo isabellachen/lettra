@@ -21,7 +21,7 @@
 
   wp.customize('title_font', function(value) {
     value.bind(function(to) {
-      $('.site-title').css({
+      $('h1, h2').css({
         'font-family': to
       });
     });
