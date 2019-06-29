@@ -170,7 +170,7 @@ add_action('wp_enqueue_scripts', 'lettra_scripts');
 
 function lettra_customized_css()
 {
-  $hue = absint(get_theme_mod('link_color', 159));
+  $hue = absint(get_theme_mod('link_color', 195));
   ?>
   <style id="custom-theme-colors" type='text/css' <?php if (is_customize_preview()) {
                                                     echo 'data-hue="' . $hue . '"';
@@ -180,8 +180,16 @@ function lettra_customized_css()
       font-family: <?php echo get_theme_mod('body_font') ?>;
     }
 
+    a {
+      color: hsl(<?php echo $hue ?>, 60%, 50%);
+    }
+
     a:visited {
-      color: hsl(<?php echo $hue ?>, 60%, 60%);
+      color: hsl(<?php echo $hue ?>, 40%, 40%);
+    }
+
+    a:hover {
+      color: hsl(<?php echo $hue ?>, 80%, 80%);
     }
 
     h1,

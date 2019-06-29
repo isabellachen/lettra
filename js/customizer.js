@@ -30,10 +30,15 @@
 
   wp.customize('link_color', function(value) {
     value.bind(function(to) {
-      const hue = `hsl(${to}, 60%, 70%)`;
-      $('a').css({
-        color: hue
-      });
+      const style = $('#custom-theme-colors');
+      let hue = style.data('hue');
+      let css = style.html();
+      css = css.split(hue + ',').join(to + ',');
+      style.html(css).data('hue', to);
+      // const hue = `hsl(${to}, 60%, 70%)`;
+      // $('a').css({
+      //   color: hue
+      // });
     });
   });
 
