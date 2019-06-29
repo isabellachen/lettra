@@ -170,14 +170,18 @@ add_action('wp_enqueue_scripts', 'lettra_scripts');
 
 function lettra_customized_css()
 {
+  $hue = absint(get_theme_mod('link_color', 159));
   ?>
-  <style type='text/css'>
+  <style id="custom-theme-colors" type='text/css' <?php if (is_customize_preview()) {
+                                                    echo 'data-hue="' . $hue . '"';
+                                                  }
+                                                  ?>>
     body {
       font-family: <?php echo get_theme_mod('body_font') ?>;
     }
 
-    a {
-      color: hsl(<?php echo get_theme_mod('link_color') ?>, 60%, 60%);
+    a:visited {
+      color: hsl(<?php echo $hue ?>, 60%, 60%);
     }
 
     h1,
