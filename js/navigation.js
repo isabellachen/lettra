@@ -28,6 +28,7 @@
     }
   })();
 
+  // Styles inherited from _s base theme.
   var container, button, menu, links, i, len;
 
   container = document.getElementById('site-navigation');
