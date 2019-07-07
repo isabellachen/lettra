@@ -17,8 +17,30 @@ function lettra_customize_register($wp_customize)
   $wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
   $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
 
+  /**
+   * Custom settings for colors
+   * Using WP's default 'colors' section
+   */
+  $wp_customize->add_setting('accent_color', array(
+    'default' => 'hsl(192, 60%, 50%)',
+    'transport'  => 'postMessage'
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+      $wp_customize,
+      'accent_color',
+      array(
+        'label'      => __('Accent Color', 'lettra'),
+        'mode' => 'hue',
+        'section'    => 'colors',
+        'settings'   => 'accent_color',
+      )
+    )
+  );
+
   $wp_customize->add_setting('link_color', array(
-    'default'        => 'orange',
+    'default' => 'hsl(192, 60%, 50%)',
     'transport'  => 'postMessage'
   ));
 

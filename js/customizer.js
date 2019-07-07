@@ -28,13 +28,23 @@
     });
   });
 
+  wp.customize('accent_color', function(value) {
+    value.bind(function(to) {
+      const style = $('#custom-theme-colors');
+      let hue = style.data('accent_hue');
+      let css = style.html();
+      css = css.split(hue + ',').join(to + ',');
+      style.html(css).data('accent_hue', to);
+    });
+  });
+
   wp.customize('link_color', function(value) {
     value.bind(function(to) {
       const style = $('#custom-theme-colors');
-      let hue = style.data('hue');
+      let hue = style.data('link_hue');
       let css = style.html();
       css = css.split(hue + ',').join(to + ',');
-      style.html(css).data('hue', to);
+      style.html(css).data('link_hue', to);
     });
   });
 

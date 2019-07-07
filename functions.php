@@ -170,35 +170,18 @@ add_action('wp_enqueue_scripts', 'lettra_scripts');
 
 function lettra_customized_css()
 {
-  $hue = absint(get_theme_mod('link_color', 195));
+  $accent_hue = absint(get_theme_mod('accent_color', 195));
+  $link_hue = absint(get_theme_mod('link_color', 195));
+  require_once('inc/custom-css.php')
   ?>
+
   <style id="custom-theme-colors" type='text/css' <?php if (is_customize_preview()) {
-                                                    echo 'data-hue="' . $hue . '"';
+                                                    echo 'data-accent_hue="' . $accent_hue . '"';
+                                                    echo 'data-link_hue="' . $link_hue . '"';
                                                   }
                                                   ?>>
-    body {
-      font-family: <?php echo get_theme_mod('body_font') ?>;
-    }
-
-    a {
-      color: hsl(<?php echo $hue ?>, 60%, 50%);
-    }
-
-    a:visited {
-      color: hsl(<?php echo $hue ?>, 40%, 40%);
-    }
-
-    a:hover {
-      color: hsl(<?php echo $hue ?>, 80%, 80%);
-    }
-
-    h1,
-    h2,
-    .site-title,
-    .entry-title,
-    .site-footer__title {
-      font-family: <?php echo get_theme_mod('title_font') ?>;
-    }
+    <?php echo lettra_custom_css();
+    ?>
   </style>
 <?php
 }
