@@ -31,12 +31,15 @@
       <div class="site-header__wrapper">
         <div class="site-branding">
           <div class="site-branding__title">
-            <!-- <//?php the_custom_logo(); ?> -->
             <!-- the title or logo -->
-            <?php if (is_front_page() && is_home()) : ?>
-              <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+            <?php if (has_custom_logo()) : ?>
+              <?php the_custom_logo(); ?>
             <?php else : ?>
-              <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+              <?php if (is_front_page() && is_home()) : ?>
+                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+              <?php else : ?>
+                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+              <?php endif; ?>
             <?php endif; ?>
             <!-- the open button menu -->
             <div id="nav-button" class="site-title__nav">

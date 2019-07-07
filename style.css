@@ -1327,7 +1327,14 @@ object {
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+}
+
+.custom-logo {
+  max-width: 10rem;
+  max-height: 3.5rem;
+  background-size: contain;
 }
 
 /*--------------------------------------------------------------
