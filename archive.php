@@ -19,12 +19,16 @@ get_header();
     <header class="page-header">
       <?php
         $data = explode(':', get_the_archive_title());
-        $cat_title = trim($data[1]);
+        $archive_lead = trim($data[0]);
+        $archive_title = trim($data[1]);
         ?>
-      <h1 class="entry-title"><?php echo $cat_title; ?></h1>
+      <div class="archive-block">
+        <h1 class="entry-title archive-lead"><?php echo $archive_lead; ?></h1>
+        <h1 class="entry-title"><?php echo $archive_title; ?></h1>
+      </div>
       <?php
         the_archive_description('<div class="archive-description">', '</div>');
-      ?>
+        ?>
     </header><!-- .page-header -->
 
   <?php
