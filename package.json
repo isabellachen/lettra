@@ -8,9 +8,9 @@
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"
   },
   "devDependencies": {
-    "autoprefixer": "^9.1.5",
-    "chokidar-cli": "^1.2.1",
-    "node-sass": "^4.9.3"
+    "autoprefixer": "^9.8.6",
+    "chokidar-cli": "^1.2.3",
+    "node-sass": "^4.14.1"
   },
   "repository": {
     "type": "git",
