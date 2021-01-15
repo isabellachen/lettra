@@ -12,14 +12,18 @@ Lettra comes with a few customisable areas.
 - Three footer widgets
 - Customisable fonts and colours
 
-## Design
+## Mobile Layout
 
 |                Mobile Screen Footer                 |                     Mobile Screen Menu                      |
 | :-------------------------------------------------: | :---------------------------------------------------------: |
 | ![mobile-single](./images/mobile-single-lettra.png) | ![navigation-mobile](./images/navigation-mobile-lettra.png) |
 
-### Desktop Layout
+## Desktop Layout Full
 
 ![lettra-featured](./images/homepage-lettra.png)
+
+---
+
+## Desktop Layout Menu
 
 ![lettra-featured](./images/navigation-lettra.png)
